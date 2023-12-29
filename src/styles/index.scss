@@ -46,6 +46,20 @@ input, button, textarea, select {
   display:none;
 }
 
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#NotFound{
+  flex:1;
+}
+
+a{
+  text-decoration: none;
+}
+
 /* Button */
 .btn{
   padding: 5px 15px;
@@ -271,6 +285,35 @@ nav.menu{
   text-align: center;
 }
 
+
+// Product details page
+
+.productPage{
+  margin: 60px 0;
+}
+.productContent{
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  background: #fff;
+  border-radius: 5px;
+  align-items: center;
+  overflow: hidden;
+}
+.productInfo{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 10px;
+  align-items: start;
+  .rating{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .itemPrice{
+    font-size: 2.4em;
+  }
+}
 
 
 //Imports Responsive Styles

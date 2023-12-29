@@ -2,6 +2,7 @@ import { FaStar } from "react-icons/fa";
 import { USDformat } from "../utils/format";
 import { useContext } from "react";
 import  {AppContext}  from "../context/AppContext";
+import { Link } from "react-router-dom";
 
 const ProductGridItem = ({ data}) => {
   const { id, image, title, description, rating, price} = data;
@@ -29,21 +30,22 @@ const ProductGridItem = ({ data}) => {
 
   return (
     <div className="productGridItem">
-
       <img src={image} alt="" />
 
       <div className="itemContent">
-        <h2>{title}</h2>
+        <Link to={`/burger/${id}`}>
+          <h2>{title}</h2>
+        </Link>
         <p className="rating">
-          <FaStar color="#F59E0B"/>
+          <FaStar color="#F59E0B" />
           <span>{rating}</span>
         </p>
-        <p>
-          {description}
-        </p>
+        <p>{description}</p>
         <div className="itemMeta">
           <div className="itemPrice">{USDformat(price)}</div>
-          <div className="btn" onClick={()=>addToCart(data)} >{itemInCart > -1 ? 'Added' : 'Add'} to Cart</div>
+          <div className="btn" onClick={() => addToCart(data)}>
+            {itemInCart > -1 ? 'Added' : 'Add'} to Cart
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { USDformat } from '../utils/format';
 import { FaSquareMinus, FaSquarePlus } from "react-icons/fa6";
-import { AppContext } from '../context/appContext';
+import { AppContext } from '../context/AppContext';
 
 const CartItem = ({ data }) => {
     const {state,dispatch} = useContext(AppContext)
@@ -28,7 +28,7 @@ const CartItem = ({ data }) => {
     <div className="cartItem">
       <img src={image} alt="" width="48" height="48" />
       <div className="cartContent">
-        <h2>{title}</h2>
+          <h2>{title}</h2>
         <p>{USDformat(price)}</p>
       </div>
       <FaSquareMinus size={18} onClick={removeCartItem} />
@@ -39,7 +39,10 @@ const CartItem = ({ data }) => {
           dispatch({ type: 'CHANGE_QUANTITY', payload: { id, num: 1 } })
         }
       />
-      <div onClick={() => dispatch({ type: 'REMOVE_FROM_CART', payload: id })} style={{display:"flex",justifyContent:"flex-end",flexGrow:"1"}}>
+      <div
+        onClick={() => dispatch({ type: 'REMOVE_FROM_CART', payload: id })}
+        style={{ display: 'flex', justifyContent: 'flex-end', flexGrow: '1' }}
+      >
         <img
           src="https://www.svgrepo.com/show/13658/error.svg"
           alt=""

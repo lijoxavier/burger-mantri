@@ -12,3 +12,8 @@ const Home = () => {
 }
 
 export default Home
+
+
+export const productsLoader=async()=>{
+  return await fetch('https://burgermantri.onrender.com/data');
+}
