@@ -38,3 +38,9 @@ Bite into the future of burger ordering with BurgerMuncher — where innovation 
 ## Live Demo
 
 [Demo](steady-salamander-6ca4f3.netlify.app)
+
+## Home
+![burgermantri-home](./burgermantri-home.png)
+
+## Cart
+![burgermantri-cart](./burgermantri-cart.png)
